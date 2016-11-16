@@ -5,10 +5,10 @@ import ucmscraper.parser as parser
 
 def test_parse():
     this_module_dir = os.path.dirname(__file__)
-    test_html_path = os.path.join(this_module_dir, 'spring17.html')
+    test_html_path = os.path.join(this_module_dir, 'spring17.html.test')
     html = open(test_html_path, "r").read()
     courses = parser.parse(html)
-    with open(os.path.join(this_module_dir, 'spring17.json'), "r") as i:
+    with open(os.path.join(this_module_dir, 'spring17.json.test'), "r") as i:
         correct_courses = json.load(i)
     assert courses == correct_courses
 
